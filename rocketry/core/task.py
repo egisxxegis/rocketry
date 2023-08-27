@@ -69,7 +69,7 @@ class TaskRun:
             task.cancel()
             await task
         elif self.is_process:
-            task.terminate()
+            task.kill()
             # Waiting till the termination is finished.
             # Otherwise may try to terminate it many times as the process is alive for a brief moment
             task.join()
